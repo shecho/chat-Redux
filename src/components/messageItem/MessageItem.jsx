@@ -1,36 +1,14 @@
-import React from 'react';
-import moment from 'moment';
-import './MessageItem.css';
+import React from "react";
+import "./MessageItem.css";
+// import moment from "moment";
 
-export default function Message(props) {
-    const {
-      data,
-      isMine,
-      startsSequence,
-      endsSequence,
-      showTimestamp
-    } = props;
-
-    const friendlyTimestamp = moment(data.timestamp).format('LLLL');
-    return (
-      <div className={[
-        'message',
-        `${isMine ? 'mine' : ''}`,
-        `${startsSequence ? 'start' : ''}`,
-        `${endsSequence ? 'end' : ''}`
-      ].join(' ')}>
-        {
-          showTimestamp &&
-            <div className="timestamp">
-              { friendlyTimestamp }
-            </div>
-        }
-
-        <div className="bubble-container">
-          <div className="bubble" title={friendlyTimestamp}>
-            { data.message }
-          </div>
-        </div>
+export default function Message() {
+  return (
+    <div>
+      <h6>Hora aqui</h6>
+      <div className="bubble-container">
+        <div className="bubble">Mensaje</div>
       </div>
-    );
+    </div>
+  );
 }

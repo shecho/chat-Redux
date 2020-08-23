@@ -1,7 +1,7 @@
 .toolbar-button {
   color: #007aff;
   font-size: 28px;
-  transition: all 0.1s;
+  transition: all 0.3s;
 }
 
 .toolbar-button:hover {

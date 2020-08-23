@@ -6,9 +6,8 @@ import Toolbar from "../toolbar/Toolbar.jsx";
 const buttonStyle = {
   border: "none",
   display: "flex",
-  alignItems: "center",
   backgroundColor: "white",
-  transform: "rotate(45deg)",
+  marginLeft: "10px",
 };
 export default function MessageArea(props) {
   return (
@@ -19,7 +18,7 @@ export default function MessageArea(props) {
         placeholder="Escibe un mensaje"
       />
       <button style={buttonStyle}>
-        <ToolbarButton key="send" icon="ion-ios-send" />
+        <ToolbarButton key="send" icon="ion-md-send" />
       </button>
     </div>
   );
