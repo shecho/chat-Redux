@@ -3,19 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { createStore } from "redux";
+import store from "./redux/store"; //store
+import { Provider } from "react-redux"; // provider
 
-// PROVIDER
-import { Provider } from "react-redux";
-// STORE
-
-const reducerExample = () => {
-  console.log("hithere");
-};
-
-// ----------------------------------------------
-
-const store = createStore(reducerExample);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

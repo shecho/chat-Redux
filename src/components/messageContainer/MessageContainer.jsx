@@ -2,7 +2,7 @@ import React from "react";
 import Toolbar from "../toolbar/Toolbar.jsx";
 import ToolbarButton from "../toolbarButton/ToolbarButton.jsx";
 import MessageArea from "../messageArea/MessageArea.jsx";
-
+import MessageItem from "../messageItem/MessageItem.jsx"
 export default function MessageContainer() {
   return (
     <div className="message-list">
@@ -18,14 +18,10 @@ export default function MessageContainer() {
         ]}
       />
       <div style={{ padding: "20px" }}>
-        <h1>Mensaje</h1>
-        <h1>Mensaje</h1>
-        <h1>Mensaje</h1>
-        <h1>Mensaje</h1>
-        <h1>Mensaje</h1>
-        <h1>Mensaje</h1>
-        <h1>Mensaje</h1>
-        <h1>Mensaje</h1>
+        <MessageItem/>
+        <MessageItem/>
+        <MessageItem/>
+        <MessageItem/>
       </div>
       <MessageArea />
     </div>

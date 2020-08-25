@@ -1,7 +1,6 @@
 import React from "react";
 import "./MessageArea.css";
 import ToolbarButton from "../toolbarButton/ToolbarButton.jsx";
-import Toolbar from "../toolbar/Toolbar.jsx";
 
 const buttonStyle = {
   border: "none",
@@ -9,7 +8,7 @@ const buttonStyle = {
   backgroundColor: "white",
   marginLeft: "10px",
 };
-export default function MessageArea(props) {
+export default function MessageArea() {
   return (
     <div className="compose">
       <input
