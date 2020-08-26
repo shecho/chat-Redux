@@ -2,12 +2,17 @@ import React from "react";
 import Toolbar from "../toolbar/Toolbar.jsx";
 import ToolbarButton from "../toolbarButton/ToolbarButton.jsx";
 import MessageArea from "../messageArea/MessageArea.jsx";
-import MessageItem from "../messageItem/MessageItem.jsx"
-export default function MessageContainer() {
+import MessageItem from "../messageItem/MessageItem.jsx";
+import { connect } from 'react-redux'
+
+
+function MessageContainer(props) {
+  let {messagesList} =  props
+  // console.log(messagesList);
   return (
     <div className="message-list">
       <Toolbar
-        title="Esta es una comversacion"
+        title="Esta es una conversación"
         rightItems={[
           <ToolbarButton
             key="info"
@@ -17,13 +22,21 @@ export default function MessageContainer() {
           <ToolbarButton key="phone" icon="ion-ios-call" />,
         ]}
       />
-      <div style={{ padding: "20px" }}>
-        <MessageItem/>
-        <MessageItem/>
-        <MessageItem/>
-        <MessageItem/>
+      <div style={{ paddingLeft: "20px" }}>
+        {messagesList.map((mensaje,index) =>(
+        <MessageItem key={index} index={index} mensaje={mensaje.content} fecha={mensaje.date}/>
+        ))}
       </div>
       <MessageArea />
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    messagesList: state.messages,
+  };
+};
+const mapDispatchToProps = (dispatch) => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MessageContainer);

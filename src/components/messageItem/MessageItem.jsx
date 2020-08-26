@@ -8,13 +8,15 @@ const rowMessageStyles = {
   justifyContent: "space-between",
   width: "100%"
 };
-export default function Message() {
+export default function Message(props) {
+
   return (
     <div className ='message'>
       <div className="bubble-container"  >
         <div className="bubble" style={rowMessageStyles}>
-          <p>Mensaje </p>
-          <p>  Hora</p>
+          <p>{props.index}</p>
+          <p> {props.mensaje}</p>
+          <p>{props.fecha}  </p>
           <MessageOption />
         </div>
       </div>
