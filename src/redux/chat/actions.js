@@ -1,5 +1,6 @@
 export const sendMessage = (id) => ({
   type: "SEND",
+  payload: chat,
 });
 
 export const deleteMessage = (id) => ({

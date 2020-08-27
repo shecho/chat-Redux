@@ -26,16 +26,24 @@ const INITIAL_STATE = {
 export const chatReducer = (previousState = INITIAL_STATE, action) => {
   switch (action.type) {
     case "SEND":
-      return console.log("enviando");
+      return console.log(action);
 
     case "DELETE":
-      return console.log("borrando");
+      let messagesList = previousState.messages.filter(
+        (message) => (message.content = !action.message)
+      );
+      return messagesList;
 
     case "SET_INPUT_VALUE":
-      return console.log("mostrando los datos capturados");
+      previousState = {
+        ...previousState,
+        inputMessage: action.payload.target.value,
+      };
+      return previousState;
 
     case "SHOW_OPTIONS":
-      return console.log("mostrando los datos capturados");
+      return (previousState.messages[action.index].showOptions = !previousState
+        .messages[action.index].showOptions.messages[action.index]);
 
     default:
       return previousState;
