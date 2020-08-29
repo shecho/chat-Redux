@@ -32,11 +32,12 @@ function MessageContainer(props) {
   );
 }
 
+
 const mapStateToProps = (state) => {
   return {
     messagesList: state.messages,
   };
 };
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = () => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageContainer);
