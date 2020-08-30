@@ -2,7 +2,8 @@
 /* {
   content:"mensaje",
   date: "fecha x",
-  showOptions: false
+  showOptions: false,
+  name:mine
   }
 */
 
@@ -10,13 +11,13 @@ const INITIAL_STATE = {
   messages: [
     {
       content: "Mensaje 1",
-      date: "fecha x",
+      date: "Sun Aug 30 2020 02:06:00 GMT-0500",
       showOptions: false,
       name: "",
     },
     {
       content: "Mensaje 2",
-      date: "fecha xx",
+      date: "Sun Aug 30 2020 02:16:00 GMT-0500",
       showOptions: false,
     },
   ],
@@ -33,8 +34,11 @@ export const chatReducer = (previousState = INITIAL_STATE, action) => {
         showOptions: false,
         content: action.payload,
       };
-      return console.log(nuevoMensaje);
-
+      // console.log(nuevoMensaje);
+      return {
+        ...previousState,
+        messages: [...previousState.messages, nuevoMensaje],
+      };
     case "DELETE":
       let messagesList = previousState.messages.filter(
         (message) => (message.content = !action.message)
