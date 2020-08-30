@@ -1,4 +1,4 @@
-// estructura de los mensajes
+//  Messaje structure
 /* {
   content:"mensaje",
   date: "fecha x",
@@ -12,6 +12,7 @@ const INITIAL_STATE = {
       content: "Mensaje 1",
       date: "fecha x",
       showOptions: false,
+      name: "",
     },
     {
       content: "Mensaje 2",
@@ -26,7 +27,13 @@ const INITIAL_STATE = {
 export const chatReducer = (previousState = INITIAL_STATE, action) => {
   switch (action.type) {
     case "SEND":
-      return console.log(action);
+      let nuevoMensaje = {
+        name: "me",
+        date: new Date(),
+        showOptions: false,
+        content: action.payload,
+      };
+      return console.log(nuevoMensaje);
 
     case "DELETE":
       let messagesList = previousState.messages.filter(

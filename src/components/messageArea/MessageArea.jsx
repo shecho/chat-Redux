@@ -22,7 +22,7 @@ function MessageArea(props) {
         className="compose-input"
         placeholder="Escibe un mensaje"
       />
-      <button style={buttonStyle} onClick={() => agregarChat()}>
+      <button style={buttonStyle} onClick={() => agregarChat(mensajeAnterior)}>
         <ToolbarButton key="send" icon="ion-md-send" />
       </button>
     </div>
@@ -43,10 +43,10 @@ const mapDispatchToProps = (dispatch) => ({
     });
   },
 
-  agregarChat(mensaje) {
+  agregarChat(mensajeAnterior) {
     dispatch({
       type: "SEND",
-      mensaje,
+      payload: mensajeAnterior,
     });
   },
 });
