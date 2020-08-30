@@ -9,9 +9,7 @@ const rowMessageStyles = {
   width: "100%",
 };
 export default function Message(props) {
-  console.log(props);
   let fechaMoment = moment(props.fecha).fromNow();
-  console.log(fechaMoment);
   return (
     <div className="message">
       <div className="bubble-container">
