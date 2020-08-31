@@ -13,12 +13,13 @@ const INITIAL_STATE = {
       content: "Mensaje 1",
       date: "Sun Aug 30 2020 02:06:00 GMT-0500",
       showOptions: false,
-      name: "",
+      name: "someone",
     },
     {
       content: "Mensaje 2",
       date: "Sun Aug 31 2020 02:16:00 GMT-0500",
       showOptions: false,
+      name: "someone",
     },
   ],
 
@@ -29,7 +30,7 @@ export const chatReducer = (previousState = INITIAL_STATE, action) => {
   switch (action.type) {
     case "SEND":
       let nuevoMensaje = {
-        name: "me",
+        name: "mine",
         date: new Date(),
         showOptions: false,
         content: action.payload,

@@ -27,7 +27,6 @@ function MessageArea(props) {
     </div>
   );
 }
-
 const mapStateToProps = (state) => {
   return {
     mensajeAnterior: state.inputMessage,

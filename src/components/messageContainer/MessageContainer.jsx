@@ -24,7 +24,7 @@ function MessageContainer(props) {
       />
       <div style={{ paddingLeft: "20px" }}>
         {messagesList.map((mensaje,index) =>(
-        <MessageItem key={index} index={index} mensaje={mensaje.content} fecha={mensaje.date}/>
+        <MessageItem key={index} index={index} mensaje={mensaje.content} fecha={mensaje.date} sender={mensaje.name}/>
         ))}
       </div>
       <MessageArea />

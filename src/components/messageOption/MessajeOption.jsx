@@ -6,25 +6,28 @@ const messageButtonStyles = {
   display: "flex",
   justifyContent: "flex-end",
 };
-const buttonStyles ={
-  border:'none',
-  margin: '5px'
-}
+const buttonStyles = {
+  border: "none",
+  margin: "5px",
+};
 
 function MessageOption(props) {
   let { borrarMensaje } = props;
 
   return (
     <div className="" style={messageButtonStyles}>
-      <button style={buttonStyles} onClick={()=>borrarMensaje(props.index)}>
-      <ToolbarButton
-        key="photo"
-        icon="ion-ios-trash"
-      />
+      <button style={buttonStyles} onClick={() => borrarMensaje(props.index)}>
+        <ToolbarButton key="photo" icon="ion-ios-trash" />
       </button>
-      <ToolbarButton key="image" icon="ion-ios-copy" />
-      <ToolbarButton key="audio" icon="ion-ios-share-alt" />
-      <ToolbarButton key="money" icon="ion-ios-star" />
+      <button style={buttonStyles}>
+        <ToolbarButton key="image" icon="ion-ios-copy" />
+      </button>
+      <button style={buttonStyles}>
+        <ToolbarButton key="audio" icon="ion-ios-share-alt" />
+      </button>
+      <button style={buttonStyles}>
+        <ToolbarButton key="money" icon="ion-ios-star" />
+      </button>
     </div>
   );
 }
