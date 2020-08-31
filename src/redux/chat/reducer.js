@@ -17,7 +17,7 @@ const INITIAL_STATE = {
     },
     {
       content: "Mensaje 2",
-      date: "Sun Aug 30 2020 02:16:00 GMT-0500",
+      date: "Sun Aug 31 2020 02:16:00 GMT-0500",
       showOptions: false,
     },
   ],
@@ -34,16 +34,14 @@ export const chatReducer = (previousState = INITIAL_STATE, action) => {
         showOptions: false,
         content: action.payload,
       };
-      // console.log(nuevoMensaje);
       return {
         ...previousState,
         messages: [...previousState.messages, nuevoMensaje],
       };
     case "DELETE":
-      let messagesList = previousState.messages.filter(
-        (message) => (message.content = !action.message)
-      );
-      return messagesList;
+      let messages = [...previousState.messages];
+      messages.splice(action.payload, 1);
+      return { ...previousState, messages: messages };
 
     case "SET_INPUT_VALUE":
       previousState = {

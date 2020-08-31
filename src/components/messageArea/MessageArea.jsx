@@ -11,7 +11,6 @@ const buttonStyle = {
 };
 function MessageArea(props) {
   const { mensajeAnterior } = props;
-  console.log(mensajeAnterior);
   const { agregarChat } = props;
   const { capturarDatos } = props;
   return (

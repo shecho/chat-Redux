@@ -18,7 +18,7 @@ export default function Message(props) {
           <p> {props.mensaje}</p>
           <p> {fechaMoment}</p>
 
-          <MessageOption />
+          <MessageOption  index={props.index}/>
         </div>
       </div>
     </div>
